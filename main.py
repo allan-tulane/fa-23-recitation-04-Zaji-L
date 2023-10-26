@@ -82,9 +82,9 @@ def compare_sort(
     result.append([
         len(mylist),
         time_search(qsort_fixed_pivot, mylist),
-        time_search(tim_sort, mylist)
-        #time_search(qsort_random_pivot, mylist),
-        #time_search(sSort, mylist)
+        time_search(tim_sort, mylist),
+        time_search(qsort_random_pivot, mylist),
+        time_search(sSort, mylist)
     ])
   return result
   ###
@@ -93,12 +93,13 @@ def compare_sort(
 def print_results(results):
   """ change as needed for comparisons """
   print(
-      tabulate.tabulate(
-          results,
-          #headers=['n', 'qsort-fixed-pivot', 'qsort-random-pivot', 'ssort'],
-          headers=['n', 'qsort-fixed-pivot', 'timesort'],
-          floatfmt=".3f",
-          tablefmt="github"))
+      tabulate.tabulate(results,
+                        headers=[
+                            'n', 'qsort-fixed-pivot', 'qsort-random-pivot',
+                            'ssort', 'timesort'
+                        ],
+                        floatfmt=".3f",
+                        tablefmt="github"))
 
 
 def test_print():
